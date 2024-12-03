@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Favoriete Games</title>
+    <style>
+        /* Eenvoudige styling voor de lijst van games */
+        ul {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mijn Favoriete Games</h1>
+
+    <!-- Container waar de games in zullen komen -->
+    <ul id="gamesList"></ul>
+
+    <script>
+        // Maak een array met je favoriete games
+        const favorieteGames = [
+            'The Legend of Zelda: Breath of the Wild',
+            'Super Mario Odyssey',
+            'Minecraft',
+            'Red Dead Redemption 2',
+            'The Witcher 3: Wild Hunt',
+            'Dark Souls III',
+            'Fortnite',
+            'Overwatch',
+            'The Elder Scrolls V: Skyrim',
+            'Hollow Knight'
+        ];
+
+        // Verkrijg de referentie naar de unordered list (ul)
+        const gamesList = document.getElementById('gamesList');
+
+        // Loop door de array en voeg elk item toe aan de lijst
+        for (let i = 0; i < favorieteGames.length; i++) {
+            // Maak een nieuw list item (li) aan
+            const listItem = document.createElement('li');
+            listItem.textContent = favorieteGames[i]; // Zet de game naam als de tekst van het item
+
+            // Voeg het list item toe aan de unordered list
+            gamesList.appendChild(listItem);
+        }
+    </script>
+
+</body>
+</html>
