@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs met Unieke ID's</title>
+    <style>
+        /* Handmatige kleurinstellingen voor de divs */
+        #div1 { background-color: #FFDDC1; }
+        #div2 { background-color: #FFABAB; }
+        #div3 { background-color: #FFC3A0; }
+        #div4 { background-color: #FF677D; }
+        #div5 { background-color: #D4A5A5; }
+        #div6 { background-color: #392F5A; }
+        #div7 { background-color: #1F618D; }
+        #div8 { background-color: #1E8449; }
+        #div9 { background-color: #F4D03F; }
+        #div10 { background-color: #E67E22; }
+        
+        /* Algemene stijl voor de divs */
+        div {
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div> <!-- Container waar de divs in komen -->
+
+    <script>
+        // Functie om de divs aan te maken
+        function maakDivs() {
+            let container = document.getElementById('container'); // De container waar de divs in komen
+
+            // Lijst van unieke teksten voor de divs
+            let teksten = [
+                "Dit is div 1", "Dit is div 2", "Dit is div 3", "Dit is div 4", 
+                "Dit is div 5", "Dit is div 6", "Dit is div 7", "Dit is div 8", 
+                "Dit is div 9", "Dit is div 10"
+            ];
+
+            // Loop om 10 divs aan te maken
+            for (let i = 0; i < 10; i++) {
+                let div = document.createElement('div'); // Maak een nieuwe div aan
+                let id = 'div' + (i + 1); // Genereer een unieke ID voor elke div
+
+                div.setAttribute("id", id); // Geef de div de gegenereerde ID
+                div.textContent = teksten[i]; // Zet de unieke tekst voor de div
+                
+                container.appendChild(div); // Voeg de div toe aan de container
+            }
+        }
+
+        // Roep de functie aan om de divs te maken
+        maakDivs();
+    </script>
+
+</body>
+</html>

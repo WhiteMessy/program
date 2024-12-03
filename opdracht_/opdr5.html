@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Circles</title>
+</head>
+<body>
+
+    <!-- Canvas element -->
+    <canvas id="mijnCanvas"></canvas>
+
+    <script>
+        // Verkrijg de canvas en de context
+        const canvas = document.getElementById('mijnCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Stel de breedte en hoogte van het canvas in
+        canvas.setAttribute('width', 5000);
+        canvas.setAttribute('height', 500);
+
+        // Startpositie voor de eerste cirkel
+        let x = 50; // Begin aan de linkerzijde van het canvas
+        const y = 250; // Verticaal in het midden van het canvas
+
+        // Loop voor het tekenen van 10 cirkels
+        for (let i = 1; i <= 10; i++) {
+            // Bepaal de straal van de cirkel
+            let radius = 20 + i * 10; // Straal van de cirkels neemt toe
+
+            // Teken de cirkel
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI); // Teken de cirkel met de juiste positie en straal
+            ctx.fillStyle = `hsl(${i * 36}, 100%, 50%)`; // Kleur van de cirkel (hsl)
+            ctx.fill();
+            ctx.stroke(); // Teken de rand van de cirkel
+
+            // Verhoog de x-positie voor de volgende cirkel, zodat ze niet overlappen
+            // De nieuwe x-positie wordt de vorige x-positie plus de straal van de huidige cirkel en een extra marge
+            x += radius * 2 + 20; // Voeg de straal van de huidige cirkel en extra ruimte toe
+        }
+    </script>
+
+</body>
+</html>

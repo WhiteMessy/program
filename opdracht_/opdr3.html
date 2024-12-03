@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicitaties</title>
+</head>
+<body>
+
+    <!-- Inputveld voor gebruiker om een getal in te voeren -->
+    <label for="aantal">Voer een getal in:</label>
+    <input type="number" id="aantal" name="aantal">
+    <button onclick="feliciteer()">Feliciteer</button>
+
+    <div id="resultaat"></div>
+
+    <script>
+        function feliciteer() {
+            // Verkrijg het getal van de gebruiker
+            let aantal = document.getElementById('aantal').value;
+            aantal = parseInt(aantal);  // Zorg dat het een getal is
+
+            // Het resultaatdiv element om de felicitaties te tonen
+            let resultaatDiv = document.getElementById('resultaat');
+            resultaatDiv.innerHTML = "";  // Maak het resultaatdiv leeg voordat we nieuwe tekst toevoegen
+
+            // For loop om de felicitaties op het scherm te tonen
+            for (let i = 1; i <= aantal; i++) {
+                let tekst = `Ik feliciteer je ${i} keer.`;
+                let paragraaf = document.createElement('p');
+                paragraaf.textContent = tekst;
+                resultaatDiv.appendChild(paragraaf);
+            }
+        }
+    </script>
+
+</body>
+</html>
