@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive functions</title>
+</head>
+<body>
+    Klik hier als je meer wilt weten over <a href="https://www.w3schools.com/js/js_htmldom_eventlistener.asp">event listeners</a>, of wanneer je meer wilt weten over welke <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">type events</a> er zijn.
+
+    <script src="script.js"></script>
+
+    <script>
+
+        // Initieer de speler
+        const speler1 = createPlayer()
+
+        const speler2 = createPlayer()
+        
+
+       
+
+
+        window.addEventListener("keydown", (e) => {
+            // Console log de keyCode om te zien welke toets gekoppeld is aan welke keyCode
+            // console.log(e.keyCode)
+
+            // Pijltje naar links = keyCode 39
+            if (e.keyCode == 37) {
+                speler1.x -= 15
+            }
+
+            // Pijltje naar rechts = keyCode 39
+            if (e.keyCode == 39) {
+                speler1.x += 15
+            }
+
+            //pijltje naar boven =38
+            if (e.keyCode == 38) {
+                speler1.y -= 15
+            }
+
+            //pijltje naar beneden =40
+            if (e.keyCode == 40) {
+                speler1.y += 15
+            }
+
+            //speler 2
+
+            // Pijltje naar links = keyCode 65
+            if (e.keyCode == 65) {
+                speler2.x -= 15
+            }
+
+            // Pijltje naar rechts = keyCode 68
+            if (e.keyCode == 68) {
+                speler2.x += 15
+            }
+
+            //pijltje naar boven =87
+            if (e.keyCode == 87) {
+                speler2.y -= 15
+            }
+
+            //pijltje naar beneden =83
+            if (e.keyCode == 83) {
+                speler2.y += 15
+            }
+
+            
+        })
+    </script>
+</body>
+</html>
